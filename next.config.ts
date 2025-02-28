@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    return [
+      {
+        source: '/:slug',
+        destination: 'https://collections.energytransitionmodel.com/:slug',
+        permanent: true,
+      },
+    ]
+  },
 };
 
 export default nextConfig;
